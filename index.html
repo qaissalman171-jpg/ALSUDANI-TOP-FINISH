@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="توب فنش" />
+  <meta name="application-name" content="السوداني توب فنش" />
+  <meta name="theme-color" content="#0B1F3A" />
+  <title>السوداني توب فنش</title>
+  <style>
+    :root {
+      --navy-dark: #071426;
+      --navy: #0B1F3A;
+      --navy-light: #15335E;
+      --orange: #F97316;
+      --orange-hover: #EA580C;
+      --text-main: #FFFFFF;
+      --text-muted: #CBD5E1;
+      --card-bg: rgba(11, 31, 58, 0.92);
+      --input-bg: rgba(7, 20, 38, 0.85);
+      --border-subtle: rgba(249, 115, 22, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Kufi Arabic", "Cairo", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top right, rgba(249, 115, 22, 0.22), transparent 45%),
+        radial-gradient(circle at bottom left, rgba(21, 51, 94, 0.65), transparent 55%),
+        linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-light) 100%);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 22px;
+      padding: 28px 22px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .brand-header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .app-icon-badge {
+      width: 74px;
+      height: 74px;
+      margin: 0 auto 14px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--navy) 0%, #102A4C 55%, var(--orange) 180%);
+      border: 2px solid var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text-main);
+      box-shadow: 0 10px 25px rgba(249, 115, 22, 0.25);
+    }
+
+    .app-icon-badge span {
+      color: var(--orange);
+    }
+
+    .brand-title {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      color: var(--text-main);
+    }
+
+    .brand-subtitle {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 7px;
+      color: #F8FAFC;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: var(--input-bg);
+      color: var(--text-main);
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus {
+      border-color: var(--orange);
+      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+    }
+
+    input::placeholder {
+      color: #94A3B8;
+      font-size: 13px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      margin-top: 8px;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background: var(--orange);
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn-submit:hover {
+      background: var(--orange-hover);
+    }
+
+    .btn-submit:active {
+      transform: scale(0.99);
+    }
+
+    .status-box {
+      display: none;
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .status-error {
+      display: block;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.45);
+      color: #FCA5A5;
+    }
+
+    .status-success {
+      display: block;
+      background: rgba(249, 115, 22, 0.16);
+      border: 1px solid rgba(249, 115, 22, 0.55);
+      color: #FED7AA;
+    }
+
+    .dashboard-box {
+      display: none;
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .dashboard-box.active {
+      display: block;
+    }
+
+    .worker-chip {
+      background: rgba(255, 255, 255, 0.06);
+      border-right: 4px solid var(--orange);
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .btn-logout {
+      width: 100%;
+      padding: 11px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .note-foot {
+      margin-top: 16px;
+      font-size: 11.5px;
+      color: #94A3B8;
+      text-align: center;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header class="brand-header">
+      <div class="app-icon-badge" aria-hidden="true">TF<span>•</span></div>
+      <h1 class="brand-title">السوداني توب فنش</h1>
+      <p class="brand-subtitle
