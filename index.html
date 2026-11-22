@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>السوداني توب فنش | AL SUDANI TOP FINISH</title>
+  <style>
+    :root {
+      --navy: #0b1628;
+      --navy-light: #152642;
+      --orange: #f97316;
+      --orange-dark: #ea580c;
+      --steel: #334155;
+      --bg: #f1f5f9;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --success: #16a34a;
+      --danger: #dc2626;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 40px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #172a4a 60%, var(--orange-dark) 100%);
+      color: #fff;
+      padding: 20px 16px;
+      border-bottom: 4px solid var(--orange);
+      box-shadow: 0 4px 16px rgba(11, 22, 40, 0.25);
+    }
+
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .brand-en {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #fed7aa;
+      letter-spacing: 1px;
+    }
+
+    .badge-dept {
+      background: rgba(249, 115, 22, 0.2);
+      border: 1px solid var(--orange);
+      color: #ffedd5;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .hero-sub {
+      margin: 8px 0 0;
+      font-size: 0.85rem;
+      color: #e2e8f0;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 14px auto 0;
+      padding: 0 12px;
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .tab-btn {
+      background: var(--card);
+      color: var(--navy);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 11px 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--orange);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--navy);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+    }
+
+    .card.accent-orange {
+      border-top-color: var(--orange);
+    }
+
+    .card-title {
+      margin: 0 0 12px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: var(--steel);
+    }
+
+    input, select {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      background: #fff;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--orange);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px 14px;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .btn-orange {
+      background: var(--orange);
+      color: #fff;
+    }
+
+    .btn-success {
+      background: var(--success);
+      color: #fff;
+    }
+
+    .btn-danger {
+      background: var(--danger);
+      color: #fff;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 1.5px solid var(--navy);
+    }
+
+    .row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .status-pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .pill-on {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .pill-off {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .pill-pending {
+      background: #ffedd5;
+      color: #9a3412;
+    }
+
+    .pill-approved {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .timer-box {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+      margin-bottom: 12px;
+      border: 2px solid var(--orange);
+    }
+
+    .timer-val {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fdba74;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .log-item {
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      padding: 12px;
+      margin-bottom: 10px;
+      background: #f8fafc;
+    }
+
+    .log-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .log-meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .hint-box {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #7c2d12;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      margin-top: 8px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-top">
+      <div>
+        <h1 class="brand-title">السوداني توب فنش</h1>
+        <div class="brand-en">AL SUDANI TOP FINISH</div>
+      </div>
+      <span class="badge-dept">4 أقسام • قسم الدكت</span>
+    </div>
+    <p class="hero-sub">نظام متابعة الحضور والأقسام والعمليات والإنتاج واعتماد المدير</p>
+  </header>
+
+  <main class="container">
+    <div class="tabs">
+      <button type="button" class="tab-btn active" id="tabWorkerBtn" onclick="switchTab('worker')">واجهة العامل</button>
+      <button type="button" class="tab-btn" id="tabRegisterBtn" onclick="switchTab('register')">تسجيل عامل</button>
+      <button type="button" class="tab-btn" id="tabAdminBtn" onclick="switchTab('admin')">لوحة المدير</button>
+    </div>
+
+    <!-- تبويب تسجيل عامل جديد -->
+    <section id="registerSection" class="card accent-orange hidden">
+      <h2 class="card-title">طلب إنشاء حساب عامل جديد</h2>
+      <label for="regName">اسم العامل الثلاثي</label>
+      <input type="text" id="regName" placeholder="مثال: سامر خالد" />
+
+      <label for="regPin">رمز الدخول (4 أرقام)</label>
+      <input type="password" id="regPin" maxlength="4" inputmode="numeric" placeholder="مثال: 2233" />
+
+      <label for="regDept">القسم الأساسي المبدئي</label>
+      <select id="regDept">
+        <option value="الدكت">الدكت</option>
+        <option value="الحدادة">الحدادة</option>
+        <option value="الدهان الحراري">الدهان الحراري</option>
+        <option value="CNC">CNC</option>
+      </select>
+
+      <button type="button" class="btn btn-orange" onclick="registerWorker()">إرسال طلب الحساب للمدير</button>
+      <div class="hint-box">بعد الإرسال، يظهر الحساب في لوحة المدير بانتظار الموافقة والتفعيل.</div>
+    </section>
+
+    <!-- تبويب واجهة العامل -->
+    <section id="workerSection">
+      <div id="workerLoginCard" class="card">
+        <h2 class="card-title">دخول العامل</h2>
+        <label for="loginWorkerSelect">اختر حسابك</label>
+        <select id="loginWorkerSelect"></select>
+
+        <label for="loginWorkerPin">رمز الدخول</label>
+        <input type="password" id="loginWorkerPin" maxlength="4" inputmode="numeric" placeholder="أدخل الرمز (مثال: 1111)" />
+
+        <button type="button" class="btn btn-primary" onclick="loginWorker()">دخول</button>
+        <div class="hint-box">حساب تجريبي جاهز: <strong>أحمد محمود</strong> — الرمز: <strong>1111</strong></div>
+      </div>
+
+      <div id="workerDashboard" class="hidden">
+        <div class="card accent-orange">
+          <div class="card-title">
+            <span id="activeWorkerTitle">العامل</span>
+            <span id="attendanceBadge" class="status-pill pill-off">منصرف</span>
+          </div>
+          <div class="row-2">
+            <button type="button" class="btn btn-success" onclick="toggleAttendance(true)">تسجيل حضور</button>
+            <button type="button" class="btn btn-danger" onclick="toggleAttendance(false)">تسجيل انصراف</button>
+          </div>
+          <button type="button" class="btn btn-outline" style="margin-top:10px;" onclick="logoutWorker()">تبديل الحساب / خروج</button>
+        </div>
+
+        <div class="card">
+          <h2 class="card-title">تحديد القسم والعملية (بداية / نهاية)</h2>
+
+          <label for="workDeptSelect">اختر القسم الحالي</label>
+          <select id="workDeptSelect" onchange="onDeptChange()">
+            <option value="الدكت">الدكت</option>
+            <option value="الحدادة">الحدادة</option>
+            <option value="الدهان الحراري">الدهان الحراري</option>
+            <option value="CNC">CNC</option>
+          </select>
+
+          <label for="workProcessSelect">اختر العملية</label>
+          <select id="workProcessSelect"></select>
+
+          <div class="timer-box">
+            <div id="activeTaskLabel">لا توجد عملية قيد التنفيذ حالياً</div>
+            <div class="timer-val" id="liveTimerDisplay">00:00:00</div>
+          </div>
+
+          <div
